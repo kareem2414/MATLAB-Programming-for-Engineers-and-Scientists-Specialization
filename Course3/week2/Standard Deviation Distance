@@ -1,0 +1,9 @@
+function dist = standard_deviation_distance(v,x)  
+M = mean(v);
+for i = 1:length(v)
+    V(i) = (v(i) - M)^2;
+end
+Value = sum(V)/(length(v)-1);
+SD = sqrt(Value)
+dist = (x - M)/SD ;
+end
