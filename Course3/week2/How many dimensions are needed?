@@ -1,0 +1,16 @@
+load humanactivity.mat
+D = feat; % [24075 x 60] matrix containing 60 feature measurements from 24075 samples
+
+% compute eigvals
+[eigvects,~,eigvals] = pca(D);
+% compute the cumulative_percent_variance_permode vector. 
+eigvals_norm = eigvals / sum(eigvals);
+Cum_sum = cumsum(eigvals_norm);
+cumulative_percent_variance_permode = Cum_sum * 100 ;
+% Define N as the number of eigenvectors needed to capture at least 99.9% of the variation in D. 
+for i = 1 : length(cumulative_percent_variance_permode)
+    if cumulative_percent_variance_permode(i) > 99.9
+        N = i;
+        break;
+    end
+end
