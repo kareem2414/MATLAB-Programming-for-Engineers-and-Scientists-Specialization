@@ -1,0 +1,9 @@
+function ans = grader(f1,f2,varargin)
+ans = false;
+for i = 1:length(varargin)
+    if ~isequal(f1(varargin{i}),f2(varargin{i}))
+        return;
+    end
+end
+ans = true;
+end
