@@ -1,0 +1,9 @@
+function mx=recursive_max(v)
+    if length(v)==1
+        mx = v;
+    elseif v(end) < recursive_max(v(1:end-1))
+        mx = recursive_max(v(1:end-1));
+    else
+        mx=v(end);
+    end
+end
