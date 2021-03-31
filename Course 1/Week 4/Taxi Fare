@@ -1,0 +1,5 @@
+function fare = taxi_fare(x,y)
+x = ceil(x);
+y = ceil(y);
+fare = 5 + ((x - 1) * 2) + (y * 0.25);
+end
