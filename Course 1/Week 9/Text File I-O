@@ -1,0 +1,13 @@
+function charnum = char_counter(name,char)
+tmp = fopen(name,'rt');
+if tmp < 0 || ~ischar(char)
+    charnum = -1;
+    return;
+end
+charnum = 0 ;
+line = fgets(tmp);
+while ischar(line)
+    charnum = charnum + sum(line == char);
+    line = fgets(tmp);
+end
+
