@@ -1,0 +1,8 @@
+function summa = halfsum(M)
+summa = 0
+[r,c] = size(M)
+for row = 1:r
+    for col = row:c
+        summa = summa + M(row,col);
+    end
+end
