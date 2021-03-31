@@ -1,0 +1,33 @@
+function d = voters(varargin)
+d = 0;
+if rem(length(varargin),2) == 0
+	d = varargin{1};
+else
+	for i = 2:2:length(varargin) - 1
+		if ~(ischar(varargin{i}) || isstring(varargin{i}))
+			d = varargin{1};break;
+		end
+		if(ischar(varargin{i+1}) ||isstring(varargin{i+1}))
+			d = varargin{1};break;
+		end
+		if ~(fix(varargin{i+1}) == varargin{i+1})
+			d = varargin{1};break;
+		end
+	end
+end
+if ~isequal(d, varargin{1})
+	database = varargin{1};
+	h = length(database) + 1;
+	g = length(database) + 1;
+	for j = 2:length(varargin)
+		if rem(j,2) == 0
+			database(h).Name = string(varargin{j});
+			h = h + 1;
+		else
+			database(g).ID = double(varargin{j});
+			g = g + 1;
+		end
+	end
+	d = database;
+end
+end
