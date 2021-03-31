@@ -1,0 +1,9 @@
+function k = next_prime(n)
+con = 1;
+while(con == 1)
+    n = n+1
+    if isprime(n)
+        k = n
+        con = 0
+    end
+end
