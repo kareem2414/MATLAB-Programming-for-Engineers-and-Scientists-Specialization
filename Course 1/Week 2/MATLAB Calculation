@@ -1,0 +1,4 @@
+borrowed = 1000
+anual_interest = 10/100
+no_of_years = 2
+debt = borrowed*(1+anual_interest)^2
