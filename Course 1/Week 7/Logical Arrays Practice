@@ -1,0 +1,4 @@
+function numfreeze = freezing(M)
+temp = M(M < 32);
+numfreeze = size(temp,2);
+end
