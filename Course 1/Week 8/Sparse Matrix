@@ -1,0 +1,8 @@
+function matrix = sparse2matrix(cellvec)
+matrix_size = cellvec{1}
+default_val = cellvec{2}
+matrix = ones(matrix_size(1),matrix_size(2))*default_val;
+for i = 3:size(cellvec,2)
+    element = cellvec{i}
+    matrix(element(1),element(2)) = element(3);
+end
