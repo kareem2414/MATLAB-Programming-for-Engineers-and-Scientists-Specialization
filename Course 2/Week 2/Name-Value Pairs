@@ -1,0 +1,15 @@
+function db = name_value_pairs(varargin)
+if rem(nargin,2) ~= 0 || nargin == 0
+    db = {};
+else
+    n = 1
+    for i = 1:nargin/2
+            db{i,1} = varargin{n};
+            if ~ischar(db{i,1})
+                db = {};
+                break;
+            end
+            db{i,2} = varargin{n+1};
+            n = n+2;
+    end
+end
