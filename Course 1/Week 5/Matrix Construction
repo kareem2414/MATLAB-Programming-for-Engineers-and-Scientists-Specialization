@@ -1,0 +1,6 @@
+function M = trio(n,m)
+one_s = ones(n,m);
+two_s = 2* ones(n,m);
+three_s = 3 * ones(n,m);
+M = [one_s;two_s;three_s];
+end
