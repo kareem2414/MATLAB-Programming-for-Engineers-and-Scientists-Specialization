@@ -1,0 +1,12 @@
+% Define T, Fs, and f (vector of sound frequencies)
+T = 3;
+Fs = 44100;
+f = [330 247 208 165 123 82];
+% Compute time vector, t
+t = [0:1/Fs:T-1/Fs];
+y = 0;
+% Use a for-loop to construct y as a sum of cosines
+for i = 1:length(f)
+    a = 2*pi*f(i);
+    y = y + cos(a * t);
+end
